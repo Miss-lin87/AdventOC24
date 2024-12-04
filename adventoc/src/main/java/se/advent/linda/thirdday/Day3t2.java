@@ -54,6 +54,6 @@ public class Day3t2 {
                 total += day2.convert_fix(result[i].split("mul"));
             }
             }
-        System.err.println(total);    
+        System.err.println(total);
         }
     }
