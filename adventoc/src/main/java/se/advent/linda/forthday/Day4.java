@@ -3,6 +3,7 @@ package se.advent.linda.forthday;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -23,9 +24,7 @@ public class Day4 {
     
         List<String> make_arraylist(String[] input){
             List<String> output = new ArrayList<>();
-            for (String letter : input) {
-                output.add(letter);
-            }
+            output.addAll(Arrays.asList(input));
             return output;
         }
 

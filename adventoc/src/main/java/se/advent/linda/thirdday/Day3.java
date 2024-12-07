@@ -41,13 +41,13 @@ public static void main(String[] args) {
     int total = 0;
     String input = day.make_raw_data();
     String[] test = day.mod_string(input);
-    for (int i = 0; i < test.length; i++) {
-        try {
-            String test2 = day.find_valid_data(test[i]);
-            total += day.convertANDmultiply(test2);
-        } catch (Exception e) {
+        for (String test1 : test) {
+            try {
+                String test2 = day.find_valid_data(test1);
+                total += day.convertANDmultiply(test2);
+            }catch (Exception e) {
+            }
         }
-    }
     System.err.println(total);
 }
 }

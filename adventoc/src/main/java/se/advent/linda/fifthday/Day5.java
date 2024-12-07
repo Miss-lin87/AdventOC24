@@ -3,6 +3,7 @@ package se.advent.linda.fifthday;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,9 +14,7 @@ public class Day5 {
         try (Scanner read_file = new Scanner(raw_data)) {
             while (read_file.hasNextLine()){
                 String[] temp = read_file.nextLine().split("\n");
-                for (String elem : temp) {
-                    rawlist.add(elem);
-                }
+                rawlist.addAll(Arrays.asList(temp));
         }
             } catch (FileNotFoundException ex) {
             }
