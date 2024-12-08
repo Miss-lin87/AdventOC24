@@ -36,11 +36,14 @@ void printmap(List<List<String>> temp){
         }
         temp.get((tempcord.get(0)+tempface.get(0))).set((tempcord.get(1)+tempface.get(1)), "#");
 
+        int loop = 0;
         while (testL == true){
+            loop ++;
             try {
                 if(!day.try_valid_move(temp, tempface, tempcord) == true) {
+                    boolean sameface = tempface.equals(face);
                     tempface = day.change_face_forward(tempface);
-                    if (day.look_at_cord(temp, tempcord.get(0)+tempface.get(0), tempcord.get(1)+tempface.get(1)) == "X"){
+                    if (day.look_at_cord(temp, tempcord.get(0)+tempface.get(0), tempcord.get(1)+tempface.get(1)) == "X" && sameface){
                         counter ++;
                         return counter;
                     }
@@ -53,6 +56,7 @@ void printmap(List<List<String>> temp){
         } catch (Exception e) {
             return counter;
         }
+        if (loop == 50000){testL = false;}
     }
     return counter;
     }

@@ -116,17 +116,17 @@ public class Day6{
         return output;
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         Day6 day = new Day6();
         List<String> seen_cords = new ArrayList<>();
         List<List<String>> matrix = day.make_matrix(day.raw_data_line("test"));
         List<Integer> cordinates = day.get_inital_cord(matrix);
         List<Integer> facing = day.set_facing(day.get_starting_face(matrix));
         boolean test = true;
-        for (Object elem : matrix) {
-            System.out.println(elem);
-        }
-        while (test == true)
+        //for (Object elem : matrix) {
+        //    System.out.println(elem);
+        //}
+        while (test == true){
         try {
             if (day.try_valid_move(matrix, facing, cordinates)==true){
                 if(!seen_cords.contains(cordinates.toString())){
@@ -142,7 +142,8 @@ public class Day6{
             System.out.println("Out of bounds");
             test = false;
         }
+    }
     // System.out.println(seen_cords);
     System.out.println(seen_cords.size());
-    }*/
+    }
 }
