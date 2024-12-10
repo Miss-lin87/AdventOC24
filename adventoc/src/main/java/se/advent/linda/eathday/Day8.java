@@ -125,8 +125,7 @@ public class Day8 {
         for (String tower : towers) {
             Map<String, List<Integer>> temp_list = day.find_all_tower(matrix, tower);
             for (int i = 0; i < temp_list.size() ; i++) {
-
-                System.out.println(temp_list.get(tower+i));
+                
             }
             System.out.println();
         }
