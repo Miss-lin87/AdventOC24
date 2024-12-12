@@ -121,8 +121,6 @@ public class Day10 {
         day.printmap(matrix);
         //System.out.println(day.find_nines(matrix, 0, 4));
         //System.err.println(day.look_at_cord(matrix, 2, 4));
-        matrix = new ArrayList<>(day.look_next(matrix, 0, 2, 1));
-        matrix = new ArrayList<>(day.look_next(matrix, 0, 2, 1));
         System.err.println("");
         day.printmap(matrix);
         //System.err.println(day.find_nines(matrix, 0, 2));

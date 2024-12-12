@@ -1,9 +1,11 @@
-package se.advent.linda;
+package se.advent.linda.eleventday;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class File_for_testing{
+public class Day11t2 {
+    Day11 day = new Day11();
 
     Map<String, Long> change_once(Map<String, Long> input, String number, Long times){
         input.put(number, (input.get(number)-times));
@@ -33,24 +35,25 @@ public class File_for_testing{
         }
         return test2;
     }
+  
 
     public static void main(String[] args) {
-        File_for_testing testing = new File_for_testing();
-        
+        Day11t2 day2 = new Day11t2();
+        List<Long> inital_list = day2.day.make_list(day2.day.raw_data_line(""));
         Map<String, Long> test = new HashMap<>();
-        test.put("125", 1L);
-        test.put("17", 1L);
-
+        for (Long elem : inital_list) {
+            test.put(elem.toString(), 1L);
+        }
         Long total = 0L;
-        Integer counter = 50;
+        Integer counter = 75;
         for (int i = counter; i > 0; i--) {
-            test = testing.one_iteration(test);
+             test = day2.one_iteration(test);
             //System.out.println(test);
         }
-        System.out.println(test);
+        //System.out.println(test);
         for (String elem : test.keySet()) {
             total += test.get(elem);            
         }
         System.out.println(total);
-    }
+    }   
 }
