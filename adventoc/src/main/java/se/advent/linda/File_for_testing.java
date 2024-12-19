@@ -1,21 +1,26 @@
 package se.advent.linda;
 
-import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 public class File_for_testing{
-
+    Cordinates set_children(Cordinates parent, Long target, Long[] numbers){
+        if(parent.getValue() > target){
+            System.out.println("toHigh");
+        }
+        else if(parent.getValue() == target){
+            System.out.println("target found");
+        }
+        return null;
+    }
+    
 
     public static void main(String[] args) {
-        File_for_testing testing = new File_for_testing();
-        
-        List<String> line = new LinkedList<>();
+        Long target = 3267L; 
+        Long[] numbers = {81L, 40L, 27L};
+        Cordinates first = new Cordinates(81L);
+        first.addChild(new Cordinates(first.getValue()+40L));
+        first.addChild(new Cordinates(first.getValue()*40L));
+        first.getAdd().addChild(new Cordinates(first.getChilds().getFirst().getValue()+27L));
+        first.getMulti().addChild(new Cordinates(first.getChilds().getLast().getValue()*27L));
 
-        Map<String, Integer> storage = new Hashtable<>();
-        storage.put("key", 1);
-        storage.put("key", 2);
-        System.out.println(storage);
+        System.out.println(first.getMulti().getValue());
     }
 }

@@ -41,8 +41,8 @@ void printmap(List<List<String>> temp){
             loop ++;
             try {
                 if(!day.try_valid_move(temp, tempface, tempcord) == true) {
-                    boolean sameface = tempface.equals(face);
                     tempface = day.change_face_forward(tempface);
+                    boolean sameface = tempface.equals(face);
                     if (day.look_at_cord(temp, tempcord.get(0)+tempface.get(0), tempcord.get(1)+tempface.get(1)) == "X" && sameface){
                         counter ++;
                         return counter;
@@ -61,7 +61,11 @@ void printmap(List<List<String>> temp){
     return counter;
     }
 
+    //2752 test ?
+    //2554 test ?
 
+    //2751 wrong
+    //2800 wrong
     public static void main(String[] args) {
         Day6t2 day2 = new Day6t2();
         List<List<String>> matrix = new ArrayList<>(day.make_matrix(day.raw_data_line("")));

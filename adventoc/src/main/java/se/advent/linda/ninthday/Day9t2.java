@@ -1,9 +1,7 @@
 package se.advent.linda.ninthday;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class Day9t2 {
     Day9 day = new Day9();
@@ -43,14 +41,14 @@ public class Day9t2 {
     List<String> sorting_first(List<String> total_list){
         for (int i = total_list.size()-1; i > 0; i--){
             if(!".".equals(total_list.get(i))){
-                System.out.print(total_list.lastIndexOf(total_list.get(i)) - total_list.indexOf(total_list.get(i))+1 + "|");
-                for (int i = 0; i < total_list.size(); i++) {
+                try {
                     
+                } catch (Exception e) {
                 }
+                System.out.print(total_list.lastIndexOf(total_list.get(i)) - total_list.indexOf(total_list.get(i))+1 + "|");
                 //System.out.print(total_list.indexOf(total_list.get(i)) + "|");
                 //System.out.println(total_list.lastIndexOf(total_list.get(i)));
-            }
-        }
+             }
         return total_list;
     }
 
@@ -70,7 +68,7 @@ public class Day9t2 {
         return changed_list;
     }
 
-    List<String> make_only_dots(List<String> input){
+    List<String> make_only_dots (List<String> input){
         for (int i = 0; i < input.size(); i++) {
             input.set(i, ".");
         }

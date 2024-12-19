@@ -130,7 +130,7 @@ public class Day8 {
             System.out.println();
         }
         Map<String, Collection<List<Integer>>> tower_locations = day.find_tower_location(matrix, towers);
-       // day.place_antinode(tower_locations, towers);
+       //day.place_antinode(tower_locations, towers);
             
         }
     }

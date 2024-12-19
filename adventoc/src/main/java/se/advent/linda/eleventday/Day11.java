@@ -66,13 +66,6 @@ public class Day11 {
             System.out.println(test);
             counter --;
         }
-        //System.out.println(test);
         System.out.println(test.size());
-        //test = day.check_rules(test);
-        //System.out.println(test);
-        //test = day.check_rules(test);
-        //System.out.println(test);
-        //test = day.check_rules(test);
-        //System.out.println(test);
     }
 }
