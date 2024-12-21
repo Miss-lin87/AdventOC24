@@ -3,7 +3,6 @@ package se.advent.linda.fortenthday;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,19 +59,19 @@ public class Day14 {
 
     Map<String, Integer> place_robots(Integer[] position, Integer wide, Integer tall, Map<String, Integer> robots){
         if(position[0] < (wide/2) && position[1] < (tall/2)){
-            System.out.println(Arrays.toString(position) + " | Q1");
+            //System.out.println(Arrays.toString(position) + " | Q1");
             robots.put("Q1", robots.getOrDefault("Q1", 0)+1);
         }
         if(position[0] > (wide/2) && position[1] < (tall/2)){
-            System.out.println(Arrays.toString(position) + " | Q2");
+            //System.out.println(Arrays.toString(position) + " | Q2");
             robots.put("Q2", robots.getOrDefault("Q2", 0)+1);
         }
         if(position[0] < (wide/2) && position[1] > (tall/2)){
-            System.err.println(Arrays.toString(position) + " | Q3");
+            //System.err.println(Arrays.toString(position) + " | Q3");
             robots.put("Q3", robots.getOrDefault("Q3", 0)+1);
         }
         if(position[0] > (wide/2) && position[1] > (tall/2)){
-            System.err.println(Arrays.toString(position) + " | Q4");
+            //System.err.println(Arrays.toString(position) + " | Q4");
             robots.put("Q4", robots.getOrDefault("Q4", 0)+1);
         }
         return robots;
