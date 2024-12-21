@@ -41,43 +41,21 @@ public class Day14 {
         return speeds;
     }
 
-    void find_position2(Integer[] position, Integer[] speed, Integer wide, Integer tall, Integer times){
-        if (times > 0){
-            
-        }
-    }
-
-
-    void find_position(Integer[] position, Integer[] speed, Integer wide, Integer tall, Integer times){
-        if (times == 0){
-            //System.out.println("Returning");
-            return;
-        }
+    void find_position(Integer[] position, Integer[] speed, Integer wide, Integer tall){
         position[0] += speed[0];
         position[1] += speed[1];
-        // System.out.println(position[0] + "|" + position[1]);
         if (position[0] > wide){
             position[0] -= wide+1;
-            //System.out.println(position[0] + "<-" + position[1]);
-            //find_position(position, speed, wide, tall, times-1);
         }
         if (position[0] < 0){
             position[0] += wide+1;
-            //System.out.println(position[0] + "->" + position[1]);
-            //find_position(position, speed, wide, tall, times-1);
         }
         if (position[1] < 0){
             position[1] += tall+1;
-            //System.out.println(position[0] + "^" + position[1]);
-            //find_position(position, speed, wide, tall, times-1);
         }
         if (position[1] > tall){
             position[1] -= tall+1;
-            //System.out.println(position[0] + "|" + position[1]);
-            //find_position(position, speed, wide, tall, times-1);
         }
-        //System.out.println("wide: " + position[0] + "|" + "Tall: "  + position[1]);
-        find_position(position, speed, wide, tall, times-1);
     }
 
     Map<String, Integer> place_robots(Integer[] position, Integer wide, Integer tall, Map<String, Integer> robots){
@@ -97,31 +75,27 @@ public class Day14 {
             System.err.println(Arrays.toString(position) + " | Q4");
             robots.put("Q4", robots.getOrDefault("Q4", 0)+1);
         }
-        //System.out.println(robots.keySet());
         return robots;
     }
 
     public static void main(String[] args) {
         Day14 day = new Day14();
         Map<String, Integer> robots = new HashMap<>();
-        List<Integer[]> positions = day.make_positions(day.make_raw_data("test"));
-        List<Integer[]> speeds = day.make_speeds(day.make_raw_data("test"));
-        
-        Integer wide = 11;
-        //System.out.println((wide/2)-1);
-        //System.out.println((wide/2)+1);
-        Integer tall = 7;
-        //System.out.println(tall/2);
+        List<Integer[]> positions = day.make_positions(day.make_raw_data(""));
+        List<Integer[]> speeds = day.make_speeds(day.make_raw_data(""));
+        Integer wide = 100;
+        Integer tall = 102;
         Integer number = 100;
         for (int i = 0; i < positions.size(); i++) {
-            //System.out.println(Arrays.toString(positions.get(i)));
-            day.find_position(positions.get(i), speeds.get(i), wide, tall, number);
+            while(number != 0){
+                day.find_position(positions.get(i), speeds.get(i), wide, tall);
+                number --;
+            }
             day.place_robots(positions.get(i), wide, tall, robots);
-            //System.out.println(Arrays.toString(positions.get(i))+ "\n");
-            //System.out.println(Arrays.toString(speeds.get(i)));
+            number = 100;
         }
         System.out.println(robots);
-        //System.out.println(position[0] + ":" + position[1]);
-        System.out.println(day.place_robots(positions.get(1), wide, tall, robots));
-    }    
+        int awnser = (((robots.get("Q1")*robots.get("Q2"))*robots.get("Q3"))*robots.get("Q4"));
+        System.out.println(awnser);
+    }
 }

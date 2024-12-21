@@ -1,26 +1,50 @@
 package se.advent.linda;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class File_for_testing{
-    Cordinates set_children(Cordinates parent, Long target, Long[] numbers){
-        if(parent.getValue() > target){
-            System.out.println("toHigh");
+
+    boolean test_valid(List<String> stripes, String towel, String start) {
+        for (int i = 0; i < stripes.size(); i++) {
+            String teststring = start + stripes.get(i);
+            if (teststring.equals(towel)) {
+                return true;
+            }
+            if (towel.startsWith(teststring)) {
+                boolean tempresult = test_valid(stripes, towel, teststring);
+                if (tempresult == true) {
+                    return true;
+                }
+            }
+            //teststring = start;
         }
-        else if(parent.getValue() == target){
-            System.out.println("target found");
-        }
-        return null;
+        return false;
     }
     
 
     public static void main(String[] args) {
-        Long target = 3267L; 
-        Long[] numbers = {81L, 40L, 27L};
-        Cordinates first = new Cordinates(81L);
-        first.addChild(new Cordinates(first.getValue()+40L));
-        first.addChild(new Cordinates(first.getValue()*40L));
-        first.getAdd().addChild(new Cordinates(first.getChilds().getFirst().getValue()+27L));
-        first.getMulti().addChild(new Cordinates(first.getChilds().getLast().getValue()*27L));
-
-        System.out.println(first.getMulti().getValue());
-    }
+        File_for_testing testi = new File_for_testing();
+        List<String> colors = new ArrayList<>(Arrays.asList("r", "wr", "b", "g", "bwu", "rb", "gb", "br"));
+        List<String> towels = new ArrayList<>(Arrays.asList("brwrr"));
+        String stringtest = "ubwu";
+        String stringtest2 = "brwrr";
+        String stringtest3 = "rrbgbr";
+        String stringtest4 = "rydhri";
+        List<Integer> indexes = new ArrayList<>();
+        boolean test = colors.stream().anyMatch(towels::contains);
+        System.out.println(testi.test_valid(colors, stringtest2, ""));
+      }
 }
+
+
+
+/*brwrr
+bggr
+gbbr
+rrbgbr
+ubwu
+bwurrg
+brgr
+bbrgwb*/
