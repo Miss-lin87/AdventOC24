@@ -32,32 +32,7 @@ public class Day14t2 {
         return false;
     }
 
-    void test_tree(String[][] map, Integer row, Integer counter){
-        Integer tempcounter = counter;
-        if (row >= map.length){
-            return;
-        }
-        for (int j = 0; j < map[row].length-1; j++) {
-            if (map[row][j+1].equals(map[row][j])){
-                counter ++;
-            }
-            System.out.println(counter);
-            }
-    }
-
-    Map<String, Integer> test_row(String[][] map){
-        Integer counter = 0;
-        Map<String, Integer> map_tree = new HashMap<>();
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                if(map[i][j] == "x"){
-                    counter ++; 
-                }
-            map_tree.put(String.valueOf(i), counter);
-            counter = 0;
-            }
-        }
-        return map_tree;
+    void test_tree(String[][] map, Integer row, Integer line, Integer counter){
     }
 
     public static void main(String[] args) {
@@ -86,18 +61,8 @@ public class Day14t2 {
             while (number != 0){
             for (int i = 0; i < positions.size(); i++) {
                 day.find_position(positions.get(i), speeds.get(i), wide, tall);
-                //day.place_robots(positions.get(i), wide, tall, robots2);
                 day2.place_cordinates(positions, map);
-                //day2.test_tree(map, 0, 0);
-                tree_test = day2.test_row(map);
             }
-            System.out.println(tree_test);
-            //System.out.println(robots2);
-            /*if ((robots2.getOrDefault("Q1", 1)*robots2.getOrDefault("Q2", 1))*robots2.getOrDefault("Q3", 1)*robots2.getOrDefault("Q4", 1) < awnser){
-                awnser = (robots2.getOrDefault("Q1", 1)*robots2.getOrDefault("Q2", 1))*robots2.getOrDefault("Q3", 1)*robots2.getOrDefault("Q4", 1);
-                secounds = number;
-            }*/
-            //robots2.clear();
             number --;
         }
             //System.out.println(awnser);
