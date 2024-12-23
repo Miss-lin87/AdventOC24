@@ -7,7 +7,6 @@ import java.util.List;
 public class Day18t2 {
     public static void main(String[] args) {
         Day18 day = new Day18();
-        Day18t2 day2 = new Day18t2();
         List<Integer[]> cordinates = new ArrayList<>(day.make_cordinate(day.make_raw_data("")));
         String[][] matrix = day.make_matrix(71, 71);
         Integer test = 0;
