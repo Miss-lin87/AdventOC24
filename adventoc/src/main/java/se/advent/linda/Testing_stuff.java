@@ -57,9 +57,6 @@ public class Testing_stuff {
             test.make_conections(base_input, conection_map, conection_map.get(node));
         }
 
-        for (String node : conection_map.keySet()) {
-            System.out.println(test.test_LAN(conection_map.get(node), 0, 0));
-        }
         //System.out.println(conection_map.get("aq").getChild(0).getName());
         //Integer count =+ test.test_LAN(conection_map.get("aq"), 0, 0);
         //System.out.println(count);
@@ -69,13 +66,13 @@ public class Testing_stuff {
         
         //System.out.println(conection_map.get("aq").getLAN());
 
-        for (String node : conection_map.keySet()){
+        /*for (String node : conection_map.keySet()){
             System.err.print(conection_map.get(node).getName() + " | ");
             for (int i = 0; i < conection_map.get(node).getConect_amount(); i++) {
                 System.out.print(conection_map.get(node).getChilds().get(i).getName() + ",");
             }
             System.out.println("");
-        }
+        }*/
 
         /*Conection base = new Conection("AB");
         base.addChild(new Conection("EF"));
