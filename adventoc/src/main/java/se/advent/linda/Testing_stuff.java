@@ -35,9 +35,7 @@ public class Testing_stuff {
         //System.out.println("Counter is: " + counter);
         if (node != root.getConect_amount()){
             for (int i = node; i != root.getConect_amount(); i++) {
-                //System.out.println("---");
                 if(root.getChild(node).getChilds().contains(root.getChild(i))){
-                    //System.out.println("+");
                     counter ++;
                 }
             }
@@ -50,49 +48,9 @@ public class Testing_stuff {
         Testing_stuff test = new Testing_stuff();
         List<String> base_input = new ArrayList<>(List.of("aq-cg","yn-aq","yn-cg", "aq-gf", "gf-yn"));
         Map<String, Conection> conection_map = test.make_stringMap(base_input);
-        //System.out.println(testing.keySet());
-        //System.out.println(testing.get("kh").getName());
-        //System.out.println(base_input.get(0).substring(0, base_input.get(0).indexOf("-")));
         for (String node : conection_map.keySet()){
             test.make_conections(base_input, conection_map, conection_map.get(node));
         }
-
-        //System.out.println(conection_map.get("aq").getChild(0).getName());
-        //Integer count =+ test.test_LAN(conection_map.get("aq"), 0, 0);
-        //System.out.println(count);
-        //test.make_conections(base_input, conection_map, conection_map.get("aq"));
-        //System.out.println(testing.get("kh").getChilds());
-        //System.out.println(conection_map.get("kh").getConect_amount());
-        
-        //System.out.println(conection_map.get("aq").getLAN());
-
-        /*for (String node : conection_map.keySet()){
-            System.err.print(conection_map.get(node).getName() + " | ");
-            for (int i = 0; i < conection_map.get(node).getConect_amount(); i++) {
-                System.out.print(conection_map.get(node).getChilds().get(i).getName() + ",");
-            }
-            System.out.println("");
-        }*/
-
-        /*Conection base = new Conection("AB");
-        base.addChild(new Conection("EF"));
-        base.addChild(new Conection("CD"));
-        base.addChild(new Conection("IJ"));
-
-        Conection IJ = new Conection("IJ");
-        IJ.addChild(base);
-        IJ.addChild(base.getChilds().getFirst());
-        System.out.println(IJ.getChilds().getFirst().getName());
-        System.out.println(IJ.getChilds().getLast().getName());
-        for (int i = 0; i < getChilds().size(); i++) {
-            System.out.println(base.getChilds().size());
-            System.out.println(base.getChilds().get(i).getName());
-        }
-        /*Set<String> testset = new HashSet<>();
-        testset.add("EF");
-        testset.add("CD");
-        testset.add("IJ");
-
-        System.out.println(testset);*/
-}
+    System.out.println(base_input);
+    }
 }

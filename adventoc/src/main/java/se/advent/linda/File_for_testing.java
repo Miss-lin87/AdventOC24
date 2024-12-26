@@ -18,11 +18,9 @@ public class File_for_testing{
                     return true;
                 }
             }
-            //teststring = start;
         }
         return false;
     }
-    
 
     public static void main(String[] args) {
         File_for_testing testi = new File_for_testing();
@@ -34,11 +32,10 @@ public class File_for_testing{
         String stringtest4 = "rydhri";
         List<Integer> indexes = new ArrayList<>();
         boolean test = colors.stream().anyMatch(towels::contains);
-        System.out.println(testi.test_valid(colors, stringtest2, ""));
+        System.out.println(test);
+        System.out.println(testi.test_valid(colors, stringtest3, ""));
       }
 }
-
-
 
 /*brwrr
 bggr

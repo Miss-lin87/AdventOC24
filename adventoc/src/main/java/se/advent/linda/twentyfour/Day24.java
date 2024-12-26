@@ -134,7 +134,7 @@ public class Day24 {
         List<String> operations = new ArrayList<>(day.make_operations(day.raw_data_line("")));
         day.calculations(wiermap, operations);
         String awnser = day.make_awnser(wiermap, day.find_z_amount(wiermap));
-        Long test = Long.parseLong(awnser,2);
+        Long test = Long.valueOf(awnser,2);
         System.out.println(test);
     }
 }

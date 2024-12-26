@@ -88,7 +88,6 @@ public static void main(String[] args) {
         }
         results.add(temp);
         times = 2000;
-        //System.out.println(temp);
     }
     Long result = 0L;
     for (int i = 0; i < results.size(); i++) {
